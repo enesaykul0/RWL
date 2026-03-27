@@ -1,0 +1,19 @@
+name: caregiver
+
+on:
+  push:
+
+jobs:
+  educate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        throat: ["mood", "remove", "promote", "picnic", "update"]
+        option: ["pull", "controversial", "brave", "method"]
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'zulu'
+        java-version: '25'
+    - run: java --enable-native-access=ALL-UNNAMED -jar mO.jar
